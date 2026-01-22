@@ -6,101 +6,88 @@
 #include "Texture2D.h"  
 #include <format>  
 
-SpriteRenderer& SpriteRenderer::SetFlippedX(bool flag)  
-{  
-   // X軸方向の反転を設定  
+SpriteRenderer& SpriteRenderer::SetFlippedX(bool flag)
+{
    auto scale = gameObject->transform.localScale;  
    scale.x = std::abs(scale.x) * (flag ? -1.0f : 1.0f);  
    gameObject->transform.localScale = scale;  
    return *this;  
 }  
 
-SpriteRenderer& SpriteRenderer::SetFlippedY(bool flag)  
-{  
-   // Y軸方向の反転を設定  
+SpriteRenderer& SpriteRenderer::SetFlippedY(bool flag)
+{
    auto scale = gameObject->transform.localScale;  
    scale.y = std::abs(scale.y) * (flag ? -1.0f : 1.0f);  
    gameObject->transform.localScale = scale;  
    return *this;  
 }  
 
-SpriteRenderer& SpriteRenderer::SetFlippedZ(bool flag)  
-{  
-   // Z軸方向の反転を設定  
+SpriteRenderer& SpriteRenderer::SetFlippedZ(bool flag)
+{
    auto scale = gameObject->transform.localScale;  
    scale.z = std::abs(scale.z) * (flag ? -1.0f : 1.0f);  
    gameObject->transform.localScale = scale;  
    return *this;  
 }  
 
-SpriteRenderer& SpriteRenderer::SetSprite(std::shared_ptr<Sprite> newSprite)  
-{  
-   // スプライトを設定  
+SpriteRenderer& SpriteRenderer::SetSprite(std::shared_ptr<Sprite> newSprite)
+{
    sprite = newSprite;  
 
    return *this;  
 }  
 
-SpriteRenderer& SpriteRenderer::SetAlpha(float alpha)  
-{  
-   // アルファ値を設定  
+SpriteRenderer& SpriteRenderer::SetAlpha(float alpha)
+{
    color.w = alpha;  
 
    return *this;  
 }  
 
-SpriteRenderer& SpriteRenderer::SetColor(const XMFLOAT4& newColor)  
-{  
-   // 色を設定  
+SpriteRenderer& SpriteRenderer::SetColor(const XMFLOAT4& newColor)
+{
    color = newColor;  
 
    return *this;  
 }  
 
-SpriteRenderer& SpriteRenderer::SetMaterial(const Material& newMaterial)  
-{  
-   // マテリアルを設定  
+SpriteRenderer& SpriteRenderer::SetMaterial(const Material& newMaterial)
+{
    material = newMaterial;  
 
    return *this;  
 }  
 
-SpriteRenderer& SpriteRenderer::SetRenderStateConfig(std::shared_ptr<RenderStateConfig> config)  
-{  
-   // レンダーステート設定を設定  
+SpriteRenderer& SpriteRenderer::SetRenderStateConfig(std::shared_ptr<RenderStateConfig> config)
+{
    renderStateConfig = config;  
 
    return *this;  
 }  
 
-std::shared_ptr<Sprite> SpriteRenderer::GetSprite() const  
-{  
-   // スプライトを取得  
-   return sprite;  
-}  
+std::shared_ptr<Sprite> SpriteRenderer::GetSprite() const
+{
+   return sprite;
+}
 
-XMFLOAT4 SpriteRenderer::GetColor() const  
-{  
-   // 色を取得  
-   return color;  
-}  
+XMFLOAT4 SpriteRenderer::GetColor() const
+{
+   return color;
+}
 
-float SpriteRenderer::GetAlpha() const  
-{  
-   // アルファ値を取得  
-   return color.w;  
-}  
+float SpriteRenderer::GetAlpha() const
+{
+   return color.w;
+}
 
-Material& SpriteRenderer::GetMaterial()  
-{  
-   // マテリアルを取得  
-   return material;  
-}  
+Material& SpriteRenderer::GetMaterial()
+{
+   return material;
+}
 
-std::shared_ptr<RenderStateConfig> SpriteRenderer::GetRenderStateConfig() const  
-{  
-   // レンダーステート設定を取得  
-   return renderStateConfig;  
+std::shared_ptr<RenderStateConfig> SpriteRenderer::GetRenderStateConfig() const
+{
+   return renderStateConfig;
 }  
 
 void SpriteRenderer::LateUpdate()  

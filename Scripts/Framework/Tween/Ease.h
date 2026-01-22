@@ -100,7 +100,7 @@ inline float EaseQuartInOut(float t)
 	return 1.0f - p * p * p * p / 2.0f;
 }
 
-// Quint 函数
+// Quint関数
 inline float EaseQuintIn(float t)
 {
 	return t * t * t * t * t;
@@ -120,7 +120,7 @@ inline float EaseQuintInOut(float t)
 	return 1.0f - p * p * p * p * p / 2.0f;
 }
 
-// Sine 函数
+// Sine関数
 inline float EaseSineIn(float t)
 {
 	return 1.0f - std::cos(t * M_PI / 2.0f);
@@ -136,7 +136,7 @@ inline float EaseSineInOut(float t)
 	return -(std::cos(M_PI * t) - 1.0f) / 2.0f;
 }
 
-// Exponential 函数
+// Exponential関数
 inline float EaseExpIn(float t)
 {
 	return t == 0.0f ? 0.0f : std::pow(2.0f, 10.0f * t - 10.0f);
@@ -156,7 +156,7 @@ inline float EaseExpInOut(float t)
 	return (2.0f - std::pow(2.0f, -20.0f * t + 10.0f)) / 2.0f;
 }
 
-// Circular 函数
+// Circular関数
 inline float EaseCircIn(float t)
 {
 	return 1.0f - std::sqrt(1.0f - t * t);
@@ -174,7 +174,7 @@ inline float EaseCircInOut(float t)
 	return (std::sqrt(1.0f - std::pow(-2.0f * t + 2.0f, 2.0f)) + 1.0f) / 2.0f;
 }
 
-// Elastic 函数
+// Elastic関数
 inline float EaseElasticIn(float t)
 {
 	const float c4 = (2.0f * M_PI) / 3.0f;
@@ -201,7 +201,7 @@ inline float EaseElasticInOut(float t)
 	return (std::pow(2.0f, -20.0f * t + 10.0f) * std::sin((20.0f * t - 11.125f) * c5)) / 2.0f + 1.0f;
 }
 
-// Back 函数
+// Back関数
 inline float EaseBackIn(float t)
 {
 	const float c1 = 1.70158f;
@@ -227,7 +227,7 @@ inline float EaseBackInOut(float t)
 	return (std::pow(p, 2.0f) * ((c2 + 1.0f) * p + c2) + 2.0f) / 2.0f;
 }
 
-// Bounce 函数
+// Bounce関数
 inline float EaseBounceOut(float t)
 {
 	const float n1 = 7.5625f;

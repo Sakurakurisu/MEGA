@@ -20,8 +20,8 @@ void VertexBuffer::Init(Mesh& meshData)
    for (UINT i = 0; i < vertexCount; ++i)  
    {  
        fullVertices[i].Position = meshData.vertices[i];  
-       fullVertices[i].Color = meshData.colors;  // 色データを設定  
-       fullVertices[i].TexCoord = meshData.uv[i];  // テクスチャ座標を設定  
+       fullVertices[i].Color = meshData.colors;
+       fullVertices[i].TexCoord = meshData.uv[i];  
    }  
 
    // 頂点バッファの設定  
@@ -60,10 +60,10 @@ void VertexBuffer::Bind() const
 
 void VertexBuffer::Draw() const  
 {  
-   if (indexBuffer)  
-       context->DrawIndexed(indexCount, 0, 0);  // インデックス付き描画  
-   else  
-       context->Draw(vertexCount, 0);  // 頂点のみの描画  
+   if (indexBuffer)
+       context->DrawIndexed(indexCount, 0, 0);
+   else
+       context->Draw(vertexCount, 0);  
 }  
 
 void VertexBuffer::UpdateVertices(const Mesh& mesh) const  
@@ -87,8 +87,8 @@ void VertexBuffer::UpdateVertices(const Mesh& mesh) const
    for (UINT i = 0; i < vertexCount; ++i)  
    {  
        vertices[i].Position = mesh.vertices[i];  
-       vertices[i].Color = mesh.colors;  // 色データを更新  
-       vertices[i].TexCoord = mesh.uv[i];  // テクスチャ座標を更新  
+       vertices[i].Color = mesh.colors;
+       vertices[i].TexCoord = mesh.uv[i];  
    }  
 
    context->Unmap(vertexBuffer.Get(), 0);  
